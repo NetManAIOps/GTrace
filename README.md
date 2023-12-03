@@ -9,6 +9,7 @@ We provide dataset B for evaluation.
 - Run `pip3 install -r requirements.txt` to install the dependencies.
 - Run `python3 -m tracegnn.models.gtrace.main` to start training. The evaluation will automatically starts after training.
 - If you want to run on GPU, you can modify the `device` in `tracegnn/models/config.py`.
+  
 (To enable accuracy evaluation, the model runs the inference once for each trace and thus cannot be used for time efficiency evaluation. If you need to perform evaluation of time efficiency, please refer to the following section.)
 
 ## Evaluation of Time Efficiency
