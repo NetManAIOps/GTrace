@@ -1,0 +1,14 @@
+? ''
+: 0
+adservice: 1
+cartservice: 2
+checkoutservice: 3
+currencyservice: 4
+emailservice: 5
+frontend: 6
+jaeger-query: 7
+logservice: 8
+paymentservice: 9
+productcatalogservice: 10
+recommendationservice: 11
+shippingservice: 12

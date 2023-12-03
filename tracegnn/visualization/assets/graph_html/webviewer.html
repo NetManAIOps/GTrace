@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>Visuaulization Tool Demo</title>
+    <style>
+      html, body {
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0pt;
+      }
+      #trace-graph-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .trace-graph, .trace-graph-anomaly, .trace-graph-anomaly-drop, .trace-graph-anomaly-latency {
+        margin: 10px;
+        width: 80%;
+        height: 500px;
+      }
+      .line-plot {
+        margin: 10px;
+        width: 80%;
+        height: 300px;
+      }
+      .trace-graph, .line-plot {
+        border: 0px solid #333;
+        background-color: #fafafa;
+      }
+      .trace-graph-anomaly {
+        border: 2px solid purple;
+      }
+      .trace-graph-anomaly-drop {
+        border: 2px solid red;
+      }
+      .trace-graph-anomaly-latency {
+        border: 2px solid darkorange;
+      }
+      .button-label {
+        margin-left: 20pt;
+        margin-right: 20pt;
+        padding: 10pt;
+      }
+    </style>
+    <script type="text/javascript">{{ echarts | safe }}</script>
+  </head>
+  <body>
+    <div style="background-color: rgb(192, 230, 250);padding: 5pt;padding-left: 20pt;">
+      <p1 style="color: rgb(23, 40, 66);font-size: large;font-weight: bold;">Visualization Tool</p1>
+    </div>
+    <div style="margin-top: 20px;">
+      <div style="position: absolute;background: #fafafa;width: 35%;top: 40px;left: 0;bottom: 0;overflow: scroll;">
+          {% for (c, score) in class_data %}
+          {% if c != select_op %}
+          <div style="margin: 5px;border-radius: 4px;background-color: white;padding:5px;" onclick="click_op({{ c }})">
+          {% else %}
+          <div style="margin: 5px;border-radius: 4px;background-color: rgb(192, 230, 250);padding:5px;border-color: rgb(23, 40, 66);border-width: 1px;border-style: solid;" onclick="click_op({{ c }})">
+          {% endif %}
+              <div style="font-size: 13pt;float: left;">API {{ c }}:  </div>
+              <div style="font-size: 13pt;color:rgb(132, 14, 37);"> {{ "%.2f" | format(score) }}</div>
+          </div>
+          {% endfor %}
+      </div>
+      <div style="background: #fff; position: absolute;left: 35%; top: 40px;bottom: 0;right: 0;overflow: scroll;text-align: center;">
+        <img src="/assets/visualization_case.svg"/>
+      </div>
+    </div>
+    <script>
+      function click_op(op) {
+        location.href="/{{ case_id }}/" + op.toString();
+      }
+    </script>
+  </body>
+</html>

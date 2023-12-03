@@ -1,0 +1,9 @@
+{
+    "name": "data-fetch-local",
+    "version-string": "0.1.0",
+    "dependencies": [
+      "spdlog",
+      "boost-lockfree",
+      "yaml-cpp"
+    ]
+  }

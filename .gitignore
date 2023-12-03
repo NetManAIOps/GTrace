@@ -1,0 +1,7 @@
+*__pycache__
+*.vscode
+*build/
+*log/
+results/
+deployment/anomaly_detection/src/run.profile
+dataset/dataset_b

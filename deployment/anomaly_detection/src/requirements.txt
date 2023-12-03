@@ -1,0 +1,31 @@
+./ml-essentials
+click
+jinja2
+networkx
+numpy
+pandas
+PyYAML
+python-snappy
+scikit-learn
+seaborn
+semver
+natsort
+imageio
+fs
+lazy_object_proxy
+kafka-python
+tqdm
+loguru
+flask
+pymongo
+protobuf
+lru-dict
+numba
+cffi
+tensorboard==1.15
+
+-f https://download.pytorch.org/whl/cpu/torch_stable.html
+torch==1.12.0
+
+-f https://data.dgl.ai/wheels/repo.html
+dgl
