@@ -1,5 +1,5 @@
 # GTrace
-Code and dataset for [From Point-wise to Group-wise: A Fast and Accurate
+Code and dataset for [(ESEC/FSE' 23) From Point-wise to Group-wise: A Fast and Accurate
 Microservice Trace Anomaly Detection Approach](https://netman.aiops.org/wp-content/uploads/2023/11/GTrace_FSE_Industry2023_upload.pdf).
 
 ## Evaluation of Accuracy
