@@ -5,3 +5,4 @@
 results/
 deployment/anomaly_detection/src/run.profile
 dataset/dataset_b
+*.DS_Store
