@@ -35,11 +35,11 @@ def _json_convert(o: Any, no_dollar_field: bool = False) -> Any:
         o = [_json_convert(v, no_dollar_field) for v in o]
     elif isinstance(o, str):
         o = str(o)
-    elif isinstance(o, (int, np.integer, np.int, np.uint,
+    elif isinstance(o, (int, np.integer, np.uint,
                         np.int8, np.int16, np.int32, np.int64,
                         np.uint8, np.uint16, np.uint32, np.uint64)):
         o = int(o)
-    elif isinstance(o, (float, np.float, np.float16, np.float32, np.float64)):
+    elif isinstance(o, (float, np.float16, np.float32, np.float64)):
         o = float(o)
     elif isinstance(o, np.ndarray):
         o = _json_convert(o.tolist(), no_dollar_field)
