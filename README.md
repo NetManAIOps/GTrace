@@ -4,7 +4,7 @@ Microservice Trace Anomaly Detection Approach](https://netman.aiops.org/wp-conte
 
 ## Evaluation of Accuracy
 We provide dataset B for evaluation.
-- Download [dataset_b](https://cloud.tsinghua.edu.cn/f/d7868566fb344541bb26/?dl=1) and put it under `dataset/`.
+- Download [dataset_b.zip](https://cloud.tsinghua.edu.cn/f/d7868566fb344541bb26/?dl=1) and put it under `dataset/` after unzipping it.
 - Install Python 3.8+ on your system.
 - Run `pip3 install -r requirements.txt` to install the dependencies.
 - Run `python3 -m tracegnn.models.gtrace.main` to start training. The evaluation will automatically starts after training.
