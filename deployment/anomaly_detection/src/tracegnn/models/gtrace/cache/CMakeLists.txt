@@ -29,7 +29,7 @@ target_link_libraries(data-fetch-test
         PRIVATE
         spdlog::spdlog
         Boost::boost
-        yaml-cpp
+        yaml-cpp::yaml-cpp
         LRUCache11
         )
 
@@ -48,6 +48,6 @@ target_link_libraries(data-fetch-lib
         PRIVATE
         spdlog::spdlog
         Boost::boost
-        yaml-cpp
+        yaml-cpp::yaml-cpp
         LRUCache11
         )

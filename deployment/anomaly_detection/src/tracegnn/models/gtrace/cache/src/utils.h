@@ -8,23 +8,24 @@
 
 
 TraceIdManager load_id_manager(const std::filesystem::path& id_manager_file) {
+    using namespace std::filesystem;
     // Read files
     TraceIdManager result;
 
     // Load operation_id
-    YAML::Node operation_id_config = YAML::LoadFile(id_manager_file / "operation_id.yml");
+    YAML::Node operation_id_config = YAML::LoadFile(id_manager_file / path("operation_id.yml"));
     for (auto &&node: operation_id_config) {
         result.operation_id[node.first.as<std::string>()] = node.second.as<size_t>();
     }
 
     // Load service_id
-    YAML::Node service_id_config = YAML::LoadFile(id_manager_file / "service_id.yml");
+    YAML::Node service_id_config = YAML::LoadFile(id_manager_file / path("service_id.yml"));
     for (auto &&node: service_id_config) {
         result.service_id[node.first.as<std::string>()] = node.second.as<size_t>();
     }
 
     // Load status_id
-    YAML::Node status_id_config = YAML::LoadFile(id_manager_file / "status_id.yml");
+    YAML::Node status_id_config = YAML::LoadFile(id_manager_file / path("status_id.yml"));
     for (auto &&node: status_id_config) {
         result.status_id[node.first.as<std::string>()] = node.second.as<size_t>();
     }

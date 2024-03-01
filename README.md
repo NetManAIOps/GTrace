@@ -14,12 +14,14 @@ We provide dataset B for evaluation.
 
 ## Evaluation of Time Efficiency
 We provide the code for the `Anomaly Detection` module and `Graph Building` module.
+__The code has not been tested on the Windows platform; please use a Mac or Linux system.__
 
 To evaluate the time efficiency, we provide a minimal example and a trained model that can be run directly on your local device without deployment:
 - Run `cd deployment`.
 - Install `GCC 9.3.0+`, `make` and `CMake 3.2+` on your device. Run `bash build.sh` to download and build the dependencies.
 - Run `sh run_local.sh` to evaluate the time efficiency.
 - Install `Intel SVML` to get better performance on Intel CPU. (See https://numba.readthedocs.io/en/stable/user/performance-tips.html#intel-svml).
+- __When the the program is complete, it will enter a waiting state and will not exit automatically. Therefore, you need to manually kill it.__
 
 ## Visualization Tool
 - Run `python3 -m tracegnn.visualization.webviewer_server`.

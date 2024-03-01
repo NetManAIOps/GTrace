@@ -1,4 +1,3 @@
-import mltk
 import time
 import click
 import json

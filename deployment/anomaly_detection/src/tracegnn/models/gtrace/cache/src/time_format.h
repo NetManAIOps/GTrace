@@ -4,6 +4,7 @@
 #include <string_view>
 #include <iomanip>
 #include <ctime>
+#include <sstream>
 
 constexpr size_t DATE_LEN = 50;
 
@@ -12,14 +13,16 @@ time_t current_ts() {
     return result;
 }
 
-
 time_t date2ts(std::string_view s) {
     std::tm t{};
-    strptime(s.data(), "%Y-%m-%d %H:%M:%S", &t);
+    std::istringstream ss(std::string{s});
+    ss >> std::get_time(&t, "%Y-%m-%d %H:%M:%S");
+    if(ss.fail()) {
+        throw std::runtime_error("Failed to parse date/time");
+    }
 
-    return timegm(&t);
+    return mktime(&t);
 }
-
 
 std::string ts2date(time_t ts) {
     auto tm = gmtime(&ts);
